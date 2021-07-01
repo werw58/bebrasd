@@ -2853,7 +2853,7 @@ hook.Add("HUDPaint", "plyweaponexperimental", function()
        surface.SetFont("HL2MPTypeDeath");
        if v:GetActiveWeapon():GetClass() == "weapon_smg1" then
         surface.DrawText("/"); end
-        if v:GetActiveWeapon():GetClass() == "weapon_357" then
+        if v:GetActiveWeapon():GetClass() == "fas2_ak47" then
         surface.DrawText("."); end
                        if v:GetActiveWeapon():GetClass() == "weapon_crossbow" then
         surface.DrawText("1"); end
