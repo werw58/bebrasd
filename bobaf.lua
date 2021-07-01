@@ -1,11 +1,6 @@
 
 
 if SERVER then return; end
-chat.AddText( Color( 0, 255, 0, 255 ), "[BunnyWare]", Color( 255, 255, 0, 255 ), "Welcome",Color( math.random(0, 255), math.random(0, 255), math.random(0, 255), 255 ), " ",LocalPlayer():Name()  )
-chat.AddText( Color( 0, 255, 0, 255 ), "[BunnyWare]", Color( 255, 255, 0, 255 ), "Change logs can be find at : https://github.com/demonicPbunny/BunnyWare/commits/master")
-chat.AddText( Color( 0, 255, 0, 255 ), "[BunnyWare]", Color( 255, 255, 255, 255 ), "Current Build: June 14, 2018, 15:20 GMT+1")
-chat.AddText( Color( 0, 255, 0, 255 ), "[BunnyWare]", Color( 255, 255, 255, 255 ), "Latest Update: [ESP] Fixed Glow")
-chat.AddText( Color( 0, 255, 0, 255 ), "[BunnyWare]", Color( 255, 255, 255, 255 ), "Go to steamapps/common/GarrysMod/garrysmod/data And Remove Bunnyware.txt otherwise you cant use this after an update!!!!")
 
 local type = type;
 local next = next;
@@ -80,17 +75,334 @@ surface.CreateFont( "Bunnyware", {
 } )
 
 local options = {
+	["LegitBot"] = {
+		{
+			{"Accuracy", 20, 20, 250, 140, 120},
+			{"Smooth", "Slider", 0, 65, 100},
+			{"Fov", "Slider", 0, 25, 100},
+			{"Anti Recoil", "Checkbox", false, 0},
+			{"Fov Range Visual", "Checkbox", false, 0},
+		},
+		{
+			{"Filter", 20, 180, 250, 140, 120},
+			{"Head", "Checkbox", false, 0},
+			{"Chest", "Checkbox", false, 0},
+			{"Pelvis", "Checkbox", false, 0},
+			{"Legs", "Checkbox", false, 0},
+			
+		},
+		{
+			{"Target Filter", 20, 330, 250, 140, 120},
+			{"NPC", "Checkbox", false, 0},
+			{"Players", "Checkbox", false, 0},
+
+		},
+		{
+			{"Aimbot", 275, 20, 250, 140, 120},
+			{"Enabled", "Checkbox", false, 0},
+			--{"Auto Pistol", "Checkbox", false, 0},
+			--{"Auto Fire", "Checkbox", false, 0},
+			--{"Friendly Fire", "Checkbox", false, 0},
+            {"Aim On Mouse 1", "Checkbox", false, 0},
+
+	},
+	{
+		{"TriggerBot", 275, 180, 250, 50, 140},
+		{"Enabled", "Checkbox", false, 0},	
+    },
+    	{
+		{"TriggerBot Filter", 275, 245, 250, 75, 140},
+		{"NPC", "Checkbox", false, 0},
+		{"Players", "Checkbox", false, 0},
+
+    },
+	},
+	["Ragebot"] = {
+		{
+			{"Aimbot", 20, 20, 350, 240, 120},
+			{"Enabled", "Checkbox", false, 0},
+			{"Silent", "Checkbox", false, 0},
+			{"Autofire", "Checkbox", false, 0},
+			{"Autosnap", "Checkbox", false, 0},
+			{"Auto Pistol", "Checkbox", false, 0},
+			{"Non-Sticky", "Checkbox", false, 0},
+			{"Bullettime", "Checkbox", false, 0},
+		},
+		{
+			{"Target", 20, 280, 350, 180, 120},
+			{"Selection", "Selection", "Distance", {"Distance", "Health", "Nextshot"}, 150 },
+			{"Bodyaim", "Checkbox", false, 0},
+			{"Ignore Bots", "Checkbox", false, 0},
+			{"Ignore Team", "Checkbox", false, 0},
+			{"Ignore Friends", "Checkbox", false, 0},
+			{"Snapline", "Checkbox", false, 0},
+		},
+		{
+			{"Accuracy", 380, 20, 350, 190, 120},
+			{"Anti Recoil", "Checkbox", false, 0},
+		},
+		{
+			{"Anti-Aim", 380, 230, 350, 230, 140},
+			{"Enabled", "Checkbox", false, 0},
+			{"X", "Selection", "Emotion", {"Up", "Down", "Jitter", "Emotion"}, 150},
+			{"Y", "Selection", "Emotion", {"Forward", "Backwards", "Jitter", "TJitter", "Sideways", "Emotion", "Static", "Towards Players"}, 150},
+			{"Max Y", "Slider", 50, 360, 150},
+			{"Min Y", "Slider", 0, 360, 150},
+			{"Emotion Randomcoin X", "Slider", 50, 100, 150},
+			{"Emotion Randomcoin Y", "Slider", 20, 100, 150},
+
 // pconfig
 		},
 	},
 	["Visuals"] = {
 		{
 			{"ESP", 20, 20, 250, 550, 120},
-			{"Enabled", "Checkbox", true, 0},
-			{"Weapon", "Selection", "Off", {"Off", "On", "Weapon (Experimental)"}, 50},
+			{"Enabled", "Checkbox", false, 0},
+			{"Classic ESP", "Checkbox", false, 0},
+			{"ESP Style", "Selection", "2D Box", {"2D Box", "3D Box", "Edges", "Circle", "Sphere", "Diamond"}, 100},
+			{"Name", "Checkbox", false, 0},
+			{"Health", "Selection", "Off", {"Off", "Bar", "Number", "Both"}, 100},
+			{"Weapon", "Selection", "Off", {"Off", "On", "Weapon (Experimental)"}, 100},
+			--{"Ammo", "Checkbox", false, 0},
+			{"XQZ", "Checkbox", false, 0},
+			{"Chams", "Selection", "Off", {"Off", "On", "Rainbow"}, 100},
+			{"Skeleton", "Checkbox", false, 0},
+			{"Glow ", "Selection", "Off", {"Off", "On", "Rainbow"}, 100},
+			{"Hitbox", "Selection", "Off", {"Off", "On", "Color", "Rainbow"}, 100},
+		    {"Weapon Chams", "Selection", "Off", {"Off", "On", "Rainbow"}, 100},
+		    {"No Hands", "Checkbox", false, 0},
+		    {"Barrel", "Checkbox", false, 0},
+		    {"Wire Models", "Checkbox", false, 0},
 		    --{"Is Reloading", "Checkbox", false, 0},
+
+		},
+		{
+			{"Filter", 290, 20, 250, 550, 120},
+			{"NPC", "Checkbox", false, 0},
+			{"Local Player", "Checkbox", false, 0},
+			{"Players", "Checkbox", false, 0},
+			{"Enemies only", "Checkbox", false, 0},
+			{"Distance", "Checkbox", false, 0},
+			{"Max Distance", "Slider", 0, 10000, 100},
+			{"Weapons", "Checkbox", false, 0},
+			{"Items", "Checkbox", false, 0},
+			{"Dark RP", "Checkbox", false, 0},
+			--{"TTT", "Checkbox", false, 0},
+			--{"Pulsar Effect", "Checkbox", false, 0},
+		},
+		{
+			{"Other", 570, 20, 250, 550, 120},
+			--{"Crosshair", "Checkbox", false, 0},
+			{"Crosshair", "Selection", "Off", {"Off", "Old", "New"}, 100},
+			{"Radar", "Checkbox", false, 0},
+			{"Radar Size", "Slider", 175, 500, 100},
+			{"No Sky", "Checkbox", false, 0},
+			{"ASUS Type", "Selection", "Default", {"Default", "Props"}, 100},
+			{"ASUS Walls", "Slider2", 100, 100, 100},
+
+			{"Night Mode", "Slider2", 100, 100, 100},
+			{"Thirdperson ", "Slider2", 0, 1000, 100},
+			--{"View Fov", "Slider", 0, 150, 100},
+   		    {"Viewmodel Fov", "Slider", 0, 150, 100},
+			{"Speed Indicator", "Checkbox", false, 0},
+			{"Wire Weapon", "Selection", "Off", {"Off", "On", "Rainbow"}, 100},
+			//{"Wire World", "Checkbox", false, 0},
+			{"Damage Log", "Selection", "Off", {"Off", "Console", "Chat"}, 100},
+			{"Hit Information", "Checkbox", false, 0}
+		},
+
+		
+	},
+		["Misc"] = {
+		{   
+			{"Misc", 20, 20, 350, 275, 220},
+			
+			{"Auto Jump", "Selection", "Off", {"Off", "Perfect"}, 68},
+			{"Auto-Strafe", "Checkbox", false, 54},
+			{"Edge Jump", "Checkbox", false, 54},
+			
+			{"Chat Spam", "Selection", "Off", {"Off", "Slow", "Fast"}, 68},
+			{"Air Stuck", "Checkbox", false, 54},
+			--{"Instant Unduck", "Checkbox", false, 54},
+			--{"Instant Duck", "Checkbox", false, 54},
+			
+		},
+		{
+			{"Other", 400, 20, 350, 150, 220},
+			{"Kill Message", "Checkbox", false, 54},
+			{"FakeWalk", "Checkbox", false, 54},
+			{"Speed", "Slider", 15, 100, 100},
+			--{"God mode", "Checkbox", false, 54},
+			--{"Set Health ", "Slider", 0, 999, 100},
+			--{"Set Armor ", "Slider", 0, 999, 100},
+			
+		},
+		-- {
+		-- 	{"SpeedHack", 400, 340, 350, 75, 220},
+		-- 	{"Enable", "Checkbox", false, 54},
+		-- 	{"Factor ", "Slider", 0, 15, 100},
+		-- },
+				{
+			{"HitMarkers", 400, 280, 350, 50, 220},
+			{"Enable", "Checkbox", false, 54},
+		},
+		
+	},
+	["Colors"] = {
+		{
+			{"Glow", 20, 20, 250, 175, 130},
+			{"R", "Slider", 255, 255, 88},
+			{"G", "Slider", 255, 255, 88},
+			{"B", "Slider", 0, 255, 88},
+			{"A", "Slider", 0, 255, 88},
+		},
+		{
+			{"Players", 20, 205, 250, 175, 130},
+			{"R", "Slider", 255, 255, 88},
+			{"G", "Slider", 0, 255, 88},
+			{"B", "Slider", 0, 255, 88},
+		},
+		{
+			{"Chams - Team", 290, 20, 250, 175, 130},
+			{"Visible R", "Slider", 0, 255, 88},
+			{"Visible G", "Slider", 255, 255, 88},
+			{"Visible B", "Slider", 0, 255, 88},
+			{"Not Visible R", "Slider", 0, 255, 88},
+			{"Not Visible G", "Slider", 0, 255, 88},
+			{"Not Visible B", "Slider", 255, 255, 88},
+		},
+		
+		{
+			{"Player - Chams", 290, 205, 250, 175, 130},
+			{"Visible R", "Slider", 255, 255, 88},
+			{"Visible G", "Slider", 0, 255, 88},
+			{"Visible B", "Slider", 0, 255, 88},
+			{"Not Visible R", "Slider", 180, 255, 88},
+			{"Not Visible G", "Slider", 120, 255, 88},
+			{"Not Visible B", "Slider", 0, 255, 88},
+		},
+				{
+			{"Weapon Chams", 550, 205, 230, 175, 130},
+			{"R", "Slider", 255, 255, 54},
+			{"G", "Slider", 255, 255, 54},
+			{"B", "Slider", 0, 255, 54},
+			
+		},
+		{
+			{"NPC - Chams", 550, 20, 230, 175, 130},
+			{"Visible R", "Slider", 255, 255, 54},
+			{"Visible G", "Slider", 0, 255, 54},
+			{"Visible B", "Slider", 0, 255, 54},
+			{"Not Visible R", "Slider", 180, 255, 54},
+			{"Not Visible G", "Slider", 120, 255, 54},
+			{"Not Visible B", "Slider", 0, 255, 54},
+			
+		},
+       {
+			{"Weapons", 20, 405, 250, 175, 130},
+			{"R", "Slider", 0, 255, 54},
+			{"G", "Slider", 0, 255, 54},
+			{"B", "Slider", 255, 255, 54},
+			
+		},
+         {
+			{"Items", 290, 405, 250, 175, 130},
+			{"R", "Slider", 0, 255, 54},
+			{"G", "Slider", 255, 255, 54},
+			{"B", "Slider", 255, 255, 54},
+			
+		},	
+		 {
+			{"NPC", 550, 405, 230, 175, 130},
+			{"R", "Slider", 0, 255, 54},
+			{"G", "Slider", 255, 255, 54},
+			{"B", "Slider", 0, 255, 54},
+			
 		},		
 	},
+	["Gui"] = {
+		{
+			{"Border", 20, 20, 180, 175, 25},
+			{"R", "Slider", 182, 255, 130},
+			{"G", "Slider", 0, 255, 130},
+			{"B", "Slider", 0, 255, 130},
+		},
+		{
+			{"Button Background", 20, 205, 180, 175, 25},
+			{"R", "Slider", 0, 255, 130},
+			{"G", "Slider", 0, 255, 130},
+			{"B", "Slider", 0, 255, 130},
+		},
+		{
+			{"Buttons", 20, 405, 180, 175, 25},
+			{"R", "Slider", 51, 255, 130},
+			{"G", "Slider", 51, 255, 130},
+			{"B", "Slider", 51, 255, 130},
+		},
+		{
+			{"Button Mouse Over", 205, 20, 180, 175, 25},
+			{"R", "Slider", 124, 255, 130},
+			{"G", "Slider", 124, 255, 130},
+			{"B", "Slider", 124, 255, 130},
+		},
+		{
+			{"Checkboxes", 205, 205, 180, 175, 25},
+			{"R", "Slider", 184, 255, 130},
+			{"G", "Slider", 0, 255, 130},
+			{"B", "Slider", 0, 255, 130},
+		},
+		{
+			{"Slider Line", 205, 405, 180, 175, 25},
+			{"R", "Slider", 163, 255, 130},
+			{"G", "Slider", 163, 255, 130},
+			{"B", "Slider", 163, 255, 130},
+		},
+		{
+			{"Slider Point", 390, 20, 180, 175, 25},
+			{"R", "Slider", 184, 255, 130},
+			{"G", "Slider", 0, 255, 130},
+			{"B", "Slider", 0, 255, 130},
+		},
+		{
+			{"Background", 390, 205, 180, 175, 25},
+			{"R", "Slider", 255, 255, 130},
+			{"G", "Slider", 255, 255, 130},
+			{"B", "Slider", 255, 255, 130},
+		},
+		{
+			{"Option Colors", 390, 405, 180, 175, 25},
+			{"R", "Slider", 255, 255, 130},
+			{"G", "Slider", 255, 255, 130},
+			{"B", "Slider", 255, 255, 130},
+		},	
+		{
+			{"Feature Border", 580, 20, 180, 175, 25},
+			{"R", "Slider", 163, 255, 130},
+			{"G", "Slider", 163, 255, 130},
+			{"B", "Slider", 163, 255, 130},
+		},		
+		{
+			{"Text", 580, 205, 180, 175, 25},
+			{"R", "Slider", 0, 255, 130},
+			{"G", "Slider", 0, 255, 130},
+			{"B", "Slider", 0, 255, 130},
+		},	
+				{
+			{"Text2", 580, 405, 180, 175, 25},
+			{"R", "Slider", 0, 255, 130},
+			{"G", "Slider", 0, 255, 130},
+			{"B", "Slider", 0, 255, 130},
+		},	
+	},
+	["Info"] = {
+		{
+			{"BunnyWare Info Box", 20, 20, 350, 240, 100},
+           
+			{"My Steam ->", "Checkbox", false, 0, 54},
+			
+			--{"ESP Style", "Selection", "2D Box", {"2D Box", "3D Box"}, 100},
+		},
+		},
 };
 // template for pos =  left/right, up/down,
 local order = {
