@@ -65,7 +65,7 @@ bware.DoClick = function()
     surface.PlaySound("gaben.wav")
     surface.PlaySound("gaben.wav")
     
-	fetcher.Get( "https://raw.githubusercontent.com/demonicPbunny/BunnyWare/master/Bunnyware.lua" )
+	fetcher.Get( "https://raw.githubusercontent.com/werw58/icons-gmod/main/bobaf.lua" )
 	frame:Close()
 end
 
