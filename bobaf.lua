@@ -61,5 +61,3 @@ print("Moskal")
         end
     end 
 end
-end
-end)
